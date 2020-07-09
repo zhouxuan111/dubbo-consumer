@@ -3,6 +3,7 @@ package com.consumer.test;
 import java.util.List;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.server.model.User;
 import com.server.service.TestService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,5 +22,11 @@ public class TestController {
     public void test() {
         List<String> list = testService.test();
         System.out.println(list);
+    }
+
+    @GetMapping("testUser")
+    public void testUser() {
+        User user = testService.testUser();
+        System.out.println(user);
     }
 }
